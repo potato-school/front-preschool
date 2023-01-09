@@ -1,0 +1,28 @@
+.title {
+  color: blue;
+}
+
+.subtitle {
+  color: violet;
+}
+
+p {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-style: oblique;
+}
+
+.login-input {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+#login-button {
+  margin-left: 30px;
+  margin-top: 30px;
+  width: 100px;
+  height: 35px;
+  border-radius: 100;
+  color: white;
+  background-color: aqua;
+}
