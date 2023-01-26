@@ -1,5 +1,6 @@
 import React from "react";
 import { useRecoilState } from "recoil";
+import Button from "../../shared/components/buttom";
 import { counterState } from "../store";
 
 export default function DecreaseButton() {
@@ -9,5 +10,12 @@ export default function DecreaseButton() {
     setCount(count - 1);
   };
 
-  return <button onClick={onClick}>감소</button>;
+  return (
+    <Button
+      label="감소"
+      size="small"
+      color="secondary"
+      onClick={onClick}
+    ></Button>
+  );
 }

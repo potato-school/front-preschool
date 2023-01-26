@@ -1,5 +1,6 @@
 import React from "react";
 import { useRecoilState } from "recoil";
+import Button from "../../shared/components/buttom";
 import { counterState } from "../store";
 
 export default function IncreaseButton() {
@@ -9,5 +10,7 @@ export default function IncreaseButton() {
     setCount(count + 1);
   };
 
-  return <button onClick={onClick}>증가</button>;
+  return (
+    <Button label="증가" size="medium" color="primary" onClick={onClick} />
+  );
 }
