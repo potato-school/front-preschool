@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import IncreaseButton from "./components/IncreaseButton";
+import DecreaseButton from "./components/DecreaseButton";
 
-export function Counter() {
+export default function Counter() {
   const [count, setCount] = useState(0);
 
   const onIncrease = () => {
-    setCount((count) => ++count);
+    setCount(count + 1);
   };
 
   const onDecrease = () => {
-    setCount((count) => --count);
+    setCount(count - 1);
   };
 
   return (
@@ -18,8 +20,8 @@ export function Counter() {
         <span>{count}</span>
       </div>
       <div>
-        <button onClick={onIncrease}>증가</button>
-        <button onClick={onDecrease}>감소</button>
+        <IncreaseButton onClick={onIncrease} />
+        <DecreaseButton onClick={onDecrease} />
       </div>
     </>
   );
