@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import IncreaseButton from "./components/IncreaseButton";
 import DecreaseButton from "./components/DecreaseButton";
+import CountNumber from "./components/CountNumber";
 
 export default function Counter() {
   const [count, setCount] = useState(0);
@@ -15,10 +16,7 @@ export default function Counter() {
 
   return (
     <>
-      <div>
-        <span>카운트: </span>
-        <span>{count}</span>
-      </div>
+      <CountNumber count={count} />
       <div>
         <IncreaseButton onClick={onIncrease} />
         <DecreaseButton onClick={onDecrease} />
