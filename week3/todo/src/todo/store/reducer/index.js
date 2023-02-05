@@ -31,7 +31,7 @@ const todoReducer = (state = initialState, action) => {
     }
     case "todo/complete": {
       return state.map((todo) => {
-        if (todo.id === payload.id) {
+        if (todo.id === action.payload) {
           todo.completed = true;
         }
         return todo;
