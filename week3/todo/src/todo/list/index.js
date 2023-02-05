@@ -1,16 +1,16 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import TodoItem from "./components/TodoItem";
 import "./style.css";
 
 export default function TodoList() {
-  const todo = {
-    id: 1,
-    text: "oo 컨텐츠 테이블 & 엔티티 설계",
-  };
+  const todoList = useSelector((store) => store.todo);
 
   return (
     <ul className="todoList">
-      <TodoItem key={todo.id} todo={todo} />
+      {todoList.map((todo) => (
+        <TodoItem key={todo.id} todo={todo} />
+      ))}
     </ul>
   );
 }
