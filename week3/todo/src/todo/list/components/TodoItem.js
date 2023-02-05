@@ -9,7 +9,7 @@ export default function TodoItem(props) {
 
   return (
     <li className="todoItem">
-      <TodoText text={todo.text} />
+      <TodoText text={todo.text} completed={todo.completed} />
       <div>
         <CompleteButton id={todo.id} />
         <DeleteButton id={todo.id} />
