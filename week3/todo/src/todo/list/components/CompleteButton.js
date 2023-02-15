@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import todoStorage from "../../../infra/storage/todoStorage";
 import { completeTodoAction } from "../../store/action";
 import "../style.css";
 
@@ -9,6 +10,7 @@ export default function CompleteButton(props) {
 
   const onClick = () => {
     dispatch(completeTodoAction(id));
+    todoStorage.complete(id);
   };
 
   return (

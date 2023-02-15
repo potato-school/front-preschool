@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import todoStorage from "../../infra/storage/todoStorage";
 import { addTodoAction } from "../store/action";
 import AddButton from "./components/AddButton";
 import TodoInput from "./components/TodoInput";
@@ -12,6 +13,7 @@ export default function TodoForm() {
     event.preventDefault();
     const todoText = event.target["todo"].value;
     dispatch(addTodoAction(todoText));
+    todoStorage.add(todoText);
     event.target["todo"].value = "";
   };
 

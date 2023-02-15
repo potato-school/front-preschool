@@ -6,11 +6,15 @@ import reportWebVitals from "./reportWebVitals";
 import { combineReducers, legacy_createStore } from "redux";
 import { Provider } from "react-redux";
 import todoReducer from "./todo/store/reducer";
+import todoStorage from "./infra/storage/todoStorage";
 
 const rootReducer = combineReducers({
   todo: todoReducer,
 });
-const store = legacy_createStore(rootReducer);
+const preloadedState = {
+  todo: todoStorage.get(),
+};
+const store = legacy_createStore(rootReducer, preloadedState);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
